@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class DragableObject : MonoBehaviour
 {
-    public bool IsPlayerOnObject { get; private set; }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public bool IsPlayerOnObject;
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             IsPlayerOnObject = true;
         }
     }
-
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             IsPlayerOnObject = false;
         }

@@ -3,7 +3,7 @@
 public class PlayerDragAndDrop : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _currentSprite;
-
+    private DragableObject _dragableObject;
     private Camera _mainCamera;
     private Vector3 _offset;
 
@@ -46,9 +46,16 @@ public class PlayerDragAndDrop : MonoBehaviour
         if (hit.collider != null)
         {
             _currentSprite = hit.collider.GetComponent<SpriteRenderer>();
-            if (_currentSprite != null)
+            _dragableObject = hit.collider.GetComponent<DragableObject>();
+
+            if (_currentSprite != null && (_dragableObject == null || !_dragableObject.IsPlayerOnObject))
             {
                 _offset = _currentSprite.transform.position - _mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -_mainCamera.transform.position.z));
+            }
+            else
+            {
+                _currentSprite = null;
+                _dragableObject = null;
             }
         }
     }
@@ -64,5 +71,6 @@ public class PlayerDragAndDrop : MonoBehaviour
     private void Drop()
     {
         _currentSprite = null;
+        _dragableObject = null;
     }
 }
