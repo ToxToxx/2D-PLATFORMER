@@ -11,6 +11,7 @@ public class PlayerInputController : MonoBehaviour
     private PlayerInputAction _playerInputAction;
 
     public event Action<CallbackContext> OnMovePlayerInputPerformed;
+    public event Action<CallbackContext> OnJumpPlayerInputPerformed;
 
     private void Awake()
     {
@@ -26,6 +27,7 @@ public class PlayerInputController : MonoBehaviour
         _playerInputAction.Player.Enable();
 
         _playerInputAction.Player.Move.performed += OnMovePerformed;
+        _playerInputAction.Player.Jump.performed += OnJumpPerformed;
     }
 
     private void OnMovePerformed(CallbackContext context)
@@ -33,9 +35,15 @@ public class PlayerInputController : MonoBehaviour
         OnMovePlayerInputPerformed?.Invoke(context);
     }
 
+    private void OnJumpPerformed(CallbackContext context)
+    {
+        OnJumpPlayerInputPerformed?.Invoke(context);
+    }
+
     private void OnDestroy()
     {
         _playerInputAction.Player.Move.performed -= OnMovePerformed;
+        _playerInputAction.Player.Jump.performed -= OnJumpPerformed;
         _playerInputAction.Dispose();
     }
 

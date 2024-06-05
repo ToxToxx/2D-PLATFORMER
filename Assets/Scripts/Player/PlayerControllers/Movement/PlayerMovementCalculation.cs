@@ -7,7 +7,7 @@ public class PlayerMovementCalculation : MonoBehaviour
     [SerializeField] private PlayerMovementSO _playerMovementConfig;
     private PlayerInputController _playerInputSystem;
 
-    private void Awake()
+    private void Start()
     {
         _playerInputSystem = PlayerInputController.Instance;
         if (_playerInputSystem != null)
