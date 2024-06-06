@@ -3,12 +3,15 @@
 public class PlayerDragAndDrop : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _currentSprite;
+
     private DragableObject _dragableObject;
     private Camera _mainCamera;
     private Vector3 _offset;
 
     private float _maxDistance = 2000f;
+
     [SerializeField] private LayerMask _paramsLayerNames;
+    [SerializeField] private float _rotationSpeed = 100f;
 
     private void Start()
     {
@@ -23,6 +26,8 @@ public class PlayerDragAndDrop : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
             Drop();
+
+        RotateObject();
 #endif
 
         if (Input.touchCount > 0)
@@ -66,6 +71,14 @@ public class PlayerDragAndDrop : MonoBehaviour
 
         Vector3 mouseWorldPos = _mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -_mainCamera.transform.position.z));
         _currentSprite.transform.position = mouseWorldPos + _offset;
+    }
+
+    private void RotateObject()
+    {
+        if (_currentSprite == null) return;
+
+        float scrollInput = Input.mouseScrollDelta.y;
+        _currentSprite.transform.Rotate(Vector3.forward, -scrollInput * _rotationSpeed * Time.deltaTime);
     }
 
     private void Drop()

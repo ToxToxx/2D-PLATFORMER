@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PlayerMovementModel
   m_EditorClassIdentifier: 
   <Speed>k__BackingField: 6
-  <JumpPower>k__BackingField: 10
+  <JumpPower>k__BackingField: 40
