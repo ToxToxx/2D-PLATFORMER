@@ -12,9 +12,9 @@ public class CoinController : MonoBehaviour
         _playerScoreController = PlayerScoreController.Instance;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.collider.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             _playerScoreController.AddScore(_coinValue);
             Destroy(gameObject);

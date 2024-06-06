@@ -22,4 +22,9 @@ public class PlayerScoreController : MonoBehaviour
     {
         _playerScore += value;
     }
+
+    public float GetScore()
+    {
+        return _playerScore;
+    }
 }
