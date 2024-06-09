@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class PlayerDeathBorder : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject _respawnPoint;
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.transform.position = _respawnPoint.gameObject.transform.position;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
