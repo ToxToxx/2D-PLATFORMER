@@ -1,20 +1,42 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DragableObject : MonoBehaviour
 {
-    public bool IsPlayerOnObject;
+    public bool IsPlayerOnObject { get; private set; }
+    private bool _isCollidingWithGround;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            _isCollidingWithGround = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            _isCollidingWithGround = false;
+        }
+    }
+
+    public bool IsCollidingWithGround()
+    {
+        return _isCollidingWithGround;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
         {
             IsPlayerOnObject = true;
         }
     }
-    private void OnCollisionExit2D(Collision2D collision)
+
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             IsPlayerOnObject = false;
         }
