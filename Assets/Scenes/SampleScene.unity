@@ -1849,6 +1849,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1998133299146889934, guid: e651658672deb0b489aec425e3472147, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.17610055
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998133299146889934, guid: e651658672deb0b489aec425e3472147, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.95366794
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998133299146889934, guid: e651658672deb0b489aec425e3472147, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998133299146889934, guid: e651658672deb0b489aec425e3472147, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281201663
+      objectReference: {fileID: 0}
     - target: {fileID: 8953511815903816785, guid: e651658672deb0b489aec425e3472147, type: 3}
       propertyPath: m_Name
       value: PlayerInfoCanvas

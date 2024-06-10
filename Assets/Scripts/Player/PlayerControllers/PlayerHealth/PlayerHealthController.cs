@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PlayerHealthController : MonoBehaviour
 {
-    [SerializeField] private int maxHealth = 3; 
+    [SerializeField] private int _maxHealth = 3; 
     private int _currentHealth; 
 
     public event System.Action<int> OnHealthChanged;
 
     private void Start()
     {
-        _currentHealth = maxHealth; 
+        _currentHealth = _maxHealth; 
     }
 
  
@@ -34,9 +34,9 @@ public class PlayerHealthController : MonoBehaviour
     public void Heal(int amount)
     {
         _currentHealth += amount;
-        if (_currentHealth > maxHealth)
+        if (_currentHealth > _maxHealth)
         {
-            _currentHealth = maxHealth;
+            _currentHealth = _maxHealth;
         }
 
         OnHealthChanged?.Invoke(_currentHealth);
@@ -45,5 +45,11 @@ public class PlayerHealthController : MonoBehaviour
     private void Die()
     {
         Debug.Log("Player has died");
+        Time.timeScale = 0;
+    }
+
+    public int GetCurrentHealth()
+    {
+        return _currentHealth;
     }
 }
