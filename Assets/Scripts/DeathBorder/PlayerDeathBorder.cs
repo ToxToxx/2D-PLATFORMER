@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerDeathBorder : MonoBehaviour
 {
     [SerializeField] private GameObject _respawnPoint;
+    [SerializeField] private int _deathBorderDamage;
 
     private PlayerHealthController _playerHealthController;
 
@@ -19,6 +20,7 @@ public class PlayerDeathBorder : MonoBehaviour
         if (collision.gameObject.GetComponent<PlayerMovementController>())
         {
             collision.gameObject.transform.position = _respawnPoint.gameObject.transform.position;
+            _playerHealthController.TakeDamage(_deathBorderDamage);
         }
     }
 
