@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovementController : MonoBehaviour
 {
     [SerializeField] private PlayerMovementCalculation _playerMovementCalculation;
     private Rigidbody2D _playerRigidbody;
+
+    private bool _isMoving;
 
     private void Awake()
     {
@@ -37,10 +40,20 @@ public class PlayerMovementController : MonoBehaviour
         if (moveSpeed > 0)
         {
             transform.localScale = new Vector3(1, 1, 1);
+            _isMoving = true;
         }
         else if (moveSpeed < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
+            _isMoving = true;
+        } else
+        {
+            _isMoving = false;
         }
+    }
+
+    public bool GetPlayerIsMoving()
+    {
+        return _isMoving;
     }
 }
