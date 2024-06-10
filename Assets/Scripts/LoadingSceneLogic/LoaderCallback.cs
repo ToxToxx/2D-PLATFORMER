@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class LoaderCallback : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private bool _isFirstUpdate = true;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (_isFirstUpdate)
+        {
+            _isFirstUpdate = false;
+
+            Loader.LoaderCallback();
+        }
     }
 }
