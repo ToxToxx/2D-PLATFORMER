@@ -4,10 +4,22 @@ using UnityEngine;
 
 public class PlayerHealthController : MonoBehaviour
 {
+    public static PlayerHealthController Instance;
+
     [SerializeField] private int _maxHealth = 3; 
     private int _currentHealth; 
 
     public event System.Action<int> OnHealthChanged;
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
 
     private void Start()
     {

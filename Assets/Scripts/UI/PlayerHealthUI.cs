@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerHealthUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private PlayerHealthController _playerHealthController;
+
+    [SerializeField] private TextMeshProUGUI _playerHealthText;
+    private void Start()
     {
-        
+        _playerHealthController = PlayerHealthController.Instance;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        _playerHealthText.text = "HEALTH: " + _playerHealthController.GetCurrentHealth().ToString();
     }
 }
