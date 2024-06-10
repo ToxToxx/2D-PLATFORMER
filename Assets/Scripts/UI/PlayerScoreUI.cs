@@ -15,6 +15,6 @@ public class PlayerScoreUI : MonoBehaviour
 
     private void Update()
     {
-        _playerScoreText.text = "Score: " + _playerScoreController.GetScore().ToString();
+        _playerScoreText.text = "COINS: " + _playerScoreController.GetScore().ToString();
     }
 }
