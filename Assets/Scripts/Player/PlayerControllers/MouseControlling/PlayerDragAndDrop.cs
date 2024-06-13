@@ -4,7 +4,8 @@ public class PlayerDragAndDrop : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _currentSprite;
 
-    private DragableObject _dragableObject;
+    private RotatablePlatform _dragableObject;
+    private SizeChangablePlatform _sizeChangablePlatform;
     private Camera _mainCamera;
     private Vector3 _offset;
 
@@ -47,17 +48,27 @@ public class PlayerDragAndDrop : MonoBehaviour
         if (hit.collider != null)
         {
             _currentSprite = hit.collider.GetComponent<SpriteRenderer>();
-            _dragableObject = hit.collider.GetComponent<DragableObject>();
+            _dragableObject = hit.collider.GetComponent<RotatablePlatform>();
+            _sizeChangablePlatform = hit.collider.GetComponent<SizeChangablePlatform>();
 
-            if (_currentSprite != null && (_dragableObject == null || !_dragableObject.IsPlayerOnObject))
+            if (_currentSprite != null && (_dragableObject == null || !_dragableObject.IsPlayerOnObject) && (_sizeChangablePlatform == null || !_sizeChangablePlatform.IsPlayerOnObject))
             {
                 _offset = _currentSprite.transform.position - _mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -_mainCamera.transform.position.z));
-                _dragableObject.StartRotation();
+
+                if (_dragableObject != null)
+                {
+                    _dragableObject.StartManipulation();
+                }
+                else if (_sizeChangablePlatform != null)
+                {
+                    _sizeChangablePlatform.StartManipulation();
+                }
             }
             else
             {
                 _currentSprite = null;
                 _dragableObject = null;
+                _sizeChangablePlatform = null;
             }
         }
     }
@@ -74,10 +85,16 @@ public class PlayerDragAndDrop : MonoBehaviour
     {
         if (_dragableObject != null)
         {
-            _dragableObject.StopRotation();
+            _dragableObject.StopManipulation();
+        }
+
+        if (_sizeChangablePlatform != null)
+        {
+            _sizeChangablePlatform.StopManipulation();
         }
 
         _currentSprite = null;
         _dragableObject = null;
+        _sizeChangablePlatform = null;
     }
 }

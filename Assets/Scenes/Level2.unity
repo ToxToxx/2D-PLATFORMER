@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 59789248}
   - component: {fileID: 59789249}
   - component: {fileID: 59789250}
+  - component: {fileID: 59789251}
   m_Layer: 6
   m_Name: SizeChangedPlatform
   m_TagString: Untagged
@@ -253,6 +254,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &59789251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59789247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adc11d0a42fb0244e94053c5933b74b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsPlayerOnObject: 0
+  resizeSpeed: 500
 --- !u!1 &172938581
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,6 +489,10 @@ PrefabInstance:
     - target: {fileID: 16697018225348273, guid: 158f72e1e08fece4ba0fee06f5535034, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423510524830682676, guid: 158f72e1e08fece4ba0fee06f5535034, type: 3}
+      propertyPath: rotationSpeed
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6989407564791164150, guid: 158f72e1e08fece4ba0fee06f5535034, type: 3}
       propertyPath: m_Name
@@ -1593,7 +1612,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2029364418}
   m_Layer: 6
-  m_Name: Dragable Objects
+  m_Name: RotatablePlatforms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1890,7 +1909,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 172938583}
   - {fileID: 960754580}
-  - {fileID: 2029364418}
   - {fileID: 1563150015}
   - {fileID: 2142733185}
   - {fileID: 2139358209}
@@ -1899,3 +1917,4 @@ SceneRoots:
   - {fileID: 1684629806}
   - {fileID: 1955673585}
   - {fileID: 1909883008}
+  - {fileID: 2029364418}
