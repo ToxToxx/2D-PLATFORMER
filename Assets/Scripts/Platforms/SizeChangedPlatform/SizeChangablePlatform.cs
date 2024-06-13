@@ -5,11 +5,14 @@ public class SizeChangablePlatform : MonoBehaviour
     public bool IsPlayerOnObject;
     private bool isManipulating;
     private IObjectManipulationStrategy manipulationStrategy;
-    [SerializeField] private float resizeSpeed = 0.1f;
+
+    [SerializeField] private float resizeSpeed = 500f;
+    [SerializeField] private float minSizeX = 0.5f;
+    [SerializeField] private float maxSizeX = 3f;
 
     private void Start()
     {
-        manipulationStrategy = new ResizeObjectStrategy(transform, resizeSpeed);
+        manipulationStrategy = new ResizeObjectStrategy(transform, resizeSpeed, minSizeX, maxSizeX);
     }
 
     private void Update()
