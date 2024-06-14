@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Loader.Scene _nextLevel;
+    [SerializeField] private int _totalCoins;
+    private int _collectedCoins;
+
+    private void Start()
     {
-        
+        _collectedCoins = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void CollectCoin()
     {
-        
+        _collectedCoins++;
+        if (_collectedCoins >= _totalCoins)
+        {
+            LoadNextLevel();
+        }
+    }
+
+    private void LoadNextLevel()
+    {
+        Loader.Load(_nextLevel);
     }
 }
