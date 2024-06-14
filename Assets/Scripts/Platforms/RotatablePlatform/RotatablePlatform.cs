@@ -5,7 +5,7 @@ public class RotatablePlatform : MonoBehaviour
     public bool IsPlayerOnObject;
     private bool isManipulating;
     private IObjectManipulationStrategy manipulationStrategy;
-    [SerializeField] private float rotationSpeed = 100f;
+    [SerializeField] private float rotationSpeed = 1000f;
 
     private void Start()
     {

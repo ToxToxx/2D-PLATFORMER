@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerDragAndDrop : MonoBehaviour
 {
@@ -12,9 +13,34 @@ public class PlayerDragAndDrop : MonoBehaviour
     private float _maxDistance = 2000f;
     [SerializeField] private LayerMask _paramsLayerNames;
 
-    private void Start()
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        Initialize();
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        Cleanup();
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Initialize();
+    }
+
+    private void Initialize()
     {
         _mainCamera = Camera.main;
+    }
+
+    private void Cleanup()
+    {
+        _currentSprite = null;
+        _dragableObject = null;
+        _sizeChangablePlatform = null;
+        _mainCamera = null;
     }
 
     private void Update()
@@ -43,6 +69,12 @@ public class PlayerDragAndDrop : MonoBehaviour
 
     private void SelectPart()
     {
+        if (_mainCamera == null)
+        {
+            Debug.LogWarning("Main camera is missing or has been destroyed.");
+            return;
+        }
+
         RaycastHit2D hit = Physics2D.Raycast(_mainCamera.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, _maxDistance, _paramsLayerNames);
 
         if (hit.collider != null)
@@ -76,6 +108,12 @@ public class PlayerDragAndDrop : MonoBehaviour
     private void DragAndDropObject()
     {
         if (_currentSprite == null) return;
+
+        if (_mainCamera == null)
+        {
+            Debug.LogWarning("Main camera is missing or has been destroyed.");
+            return;
+        }
 
         Vector3 mouseWorldPos = _mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -_mainCamera.transform.position.z));
         _currentSprite.transform.position = mouseWorldPos + _offset;

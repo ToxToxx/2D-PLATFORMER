@@ -42,9 +42,12 @@ public class PlayerInputController : MonoBehaviour
 
     private void OnDestroy()
     {
-        _playerInputAction.Player.Move.performed -= OnMovePerformed;
-        _playerInputAction.Player.Jump.performed -= OnJumpPerformed;
-        _playerInputAction.Dispose();
+        if (_playerInputAction != null)
+        {
+            _playerInputAction.Player.Move.performed -= OnMovePerformed;
+            _playerInputAction.Player.Jump.performed -= OnJumpPerformed;
+            _playerInputAction.Dispose();
+        }
     }
 
     public PlayerInputAction GetInputAction()
