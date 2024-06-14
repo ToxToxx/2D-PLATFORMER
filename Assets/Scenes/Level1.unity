@@ -1093,6 +1093,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6423510524830682676, guid: 158f72e1e08fece4ba0fee06f5535034, type: 3}
+      propertyPath: rotationSpeed
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 6989407564791164150, guid: 158f72e1e08fece4ba0fee06f5535034, type: 3}
       propertyPath: m_Name
       value: DragablePlatform (1)
@@ -1618,6 +1622,75 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e651658672deb0b489aec425e3472147, type: 3}
+--- !u!1001 &3996307444795998775
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 257504675656173965, guid: 678facf12c4c6a94aae2d1e2350d0f23, type: 3}
+      propertyPath: _nextLevel
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 257504675656173965, guid: 678facf12c4c6a94aae2d1e2350d0f23, type: 3}
+      propertyPath: _totalCoins
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 257504675656173965, guid: 678facf12c4c6a94aae2d1e2350d0f23, type: 3}
+      propertyPath: _playerGameObject
+      value: 
+      objectReference: {fileID: 395255674}
+    - target: {fileID: 4077038057496113308, guid: 678facf12c4c6a94aae2d1e2350d0f23, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -70.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077038057496113308, guid: 678facf12c4c6a94aae2d1e2350d0f23, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -25.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077038057496113308, guid: 678facf12c4c6a94aae2d1e2350d0f23, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077038057496113308, guid: 678facf12c4c6a94aae2d1e2350d0f23, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077038057496113308, guid: 678facf12c4c6a94aae2d1e2350d0f23, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077038057496113308, guid: 678facf12c4c6a94aae2d1e2350d0f23, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077038057496113308, guid: 678facf12c4c6a94aae2d1e2350d0f23, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077038057496113308, guid: 678facf12c4c6a94aae2d1e2350d0f23, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077038057496113308, guid: 678facf12c4c6a94aae2d1e2350d0f23, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077038057496113308, guid: 678facf12c4c6a94aae2d1e2350d0f23, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594683143278568078, guid: 678facf12c4c6a94aae2d1e2350d0f23, type: 3}
+      propertyPath: m_Name
+      value: LevelManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 678facf12c4c6a94aae2d1e2350d0f23, type: 3}
 --- !u!1001 &4534602211672968916
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1780,6 +1853,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6423510524830682676, guid: 158f72e1e08fece4ba0fee06f5535034, type: 3}
+      propertyPath: rotationSpeed
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 6989407564791164150, guid: 158f72e1e08fece4ba0fee06f5535034, type: 3}
       propertyPath: m_Name
       value: DragablePlatform
@@ -1803,3 +1880,4 @@ SceneRoots:
   - {fileID: 3262237558935722278}
   - {fileID: 320020748}
   - {fileID: 4534602211672968916}
+  - {fileID: 3996307444795998775}
