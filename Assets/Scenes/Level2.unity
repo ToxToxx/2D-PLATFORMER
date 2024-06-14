@@ -695,6 +695,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 257504675656173965, guid: 678facf12c4c6a94aae2d1e2350d0f23, type: 3}
+      propertyPath: _nextLevel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 257504675656173965, guid: 678facf12c4c6a94aae2d1e2350d0f23, type: 3}
+      propertyPath: _totalCoins
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 257504675656173965, guid: 678facf12c4c6a94aae2d1e2350d0f23, type: 3}
       propertyPath: _playerGameObject
       value: 
       objectReference: {fileID: 990089543}
