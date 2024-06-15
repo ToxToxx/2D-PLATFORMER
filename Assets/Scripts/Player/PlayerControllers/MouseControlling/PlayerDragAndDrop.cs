@@ -83,7 +83,7 @@ public class PlayerDragAndDrop : MonoBehaviour
             _dragableObject = hit.collider.GetComponent<RotatablePlatform>();
             _sizeChangablePlatform = hit.collider.GetComponent<SizeChangablePlatform>();
 
-            if (_currentSprite != null && (_dragableObject == null || !_dragableObject.IsPlayerOnObject) && (_sizeChangablePlatform == null || !_sizeChangablePlatform.IsPlayerOnObject))
+            if (_currentSprite != null && (_dragableObject == null || !_dragableObject._isPlayerOnObject) && (_sizeChangablePlatform == null || !_sizeChangablePlatform.IsPlayerOnObject))
             {
                 _offset = _currentSprite.transform.position - _mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -_mainCamera.transform.position.z));
 

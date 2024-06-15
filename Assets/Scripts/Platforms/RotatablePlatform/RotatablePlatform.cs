@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class RotatablePlatform : MonoBehaviour
 {
-    public bool IsPlayerOnObject;
-    private bool isManipulating;
+    public bool _isPlayerOnObject;
+    private bool _isManipulating;
     private IObjectManipulationStrategy manipulationStrategy;
     [SerializeField] private float rotationSpeed = 1000f;
 
@@ -14,7 +14,7 @@ public class RotatablePlatform : MonoBehaviour
 
     private void Update()
     {
-        if (isManipulating)
+        if (_isManipulating)
         {
             float scrollInput = Input.mouseScrollDelta.y;
             manipulationStrategy.ManipulateObject(scrollInput);
@@ -23,19 +23,19 @@ public class RotatablePlatform : MonoBehaviour
 
     public void StartManipulation()
     {
-        isManipulating = true;
+        _isManipulating = true;
     }
 
     public void StopManipulation()
     {
-        isManipulating = false;
+        _isManipulating = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.GetComponent<PlayerMovementController>())
         {
-            IsPlayerOnObject = true;
+            _isPlayerOnObject = true;
         }
     }
 
@@ -43,7 +43,7 @@ public class RotatablePlatform : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<PlayerMovementController>())
         {
-            IsPlayerOnObject = false;
+            _isPlayerOnObject = false;
         }
     }
 }
