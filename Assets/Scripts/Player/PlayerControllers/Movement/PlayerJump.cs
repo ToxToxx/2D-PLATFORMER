@@ -1,18 +1,21 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerJump : MonoBehaviour
 {
     [SerializeField] private PlayerMovementSO _playerMovementSO;
-
-    private Rigidbody2D _rigidbody;
-    private PlayerInputController _playerInputSystem;
     [SerializeField] private bool _isGrounded;
     [SerializeField] private bool _isJumping;
 
+    private Rigidbody2D _playerRigidbody;
+    private PlayerInputController _playerInputSystem;
+
+
+
     private void Awake()
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
+        _playerRigidbody = GetComponent<Rigidbody2D>();
     }
 
     private void Start()
@@ -32,7 +35,7 @@ public class PlayerJump : MonoBehaviour
     {
         if (_isJumping && _isGrounded)
         {
-            _rigidbody.AddForce(Vector2.up * _playerMovementSO.JumpPower, ForceMode2D.Impulse);
+            _playerRigidbody.AddForce(Vector2.up * _playerMovementSO.JumpPower, ForceMode2D.Impulse);
             _isJumping = false;
         }
     }
