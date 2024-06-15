@@ -3,8 +3,8 @@ using UnityEngine;
 public class SizeChangablePlatform : MonoBehaviour
 {
     public bool IsPlayerOnObject;
-    private bool isManipulating;
-    private IObjectManipulationStrategy manipulationStrategy;
+    private bool _isManipulating;
+    private IObjectManipulationStrategy _platformManipulationStrategy;
 
     [SerializeField] private float resizeSpeed = 500f;
     [SerializeField] private float minSizeX = 0.5f;
@@ -12,26 +12,26 @@ public class SizeChangablePlatform : MonoBehaviour
 
     private void Start()
     {
-        manipulationStrategy = new ResizeObjectStrategy(transform, resizeSpeed, minSizeX, maxSizeX);
+        _platformManipulationStrategy = new ResizeObjectStrategy(transform, resizeSpeed, minSizeX, maxSizeX);
     }
 
     private void Update()
     {
-        if (isManipulating)
+        if (_isManipulating)
         {
             float scrollInput = Input.mouseScrollDelta.y;
-            manipulationStrategy.ManipulateObject(scrollInput);
+            _platformManipulationStrategy.ManipulateObject(scrollInput);
         }
     }
 
     public void StartManipulation()
     {
-        isManipulating = true;
+        _isManipulating = true;
     }
 
     public void StopManipulation()
     {
-        isManipulating = false;
+        _isManipulating = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
