@@ -9,6 +9,7 @@ public static class Loader
         LoadingScreen,
         Level1,
         Level2,
+        Level3,
     }
 
     private static Scene _targetScene;
