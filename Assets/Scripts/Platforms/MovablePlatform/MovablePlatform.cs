@@ -1,18 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MovablePlatform : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Transform _pointA;
+    [SerializeField] private Transform _pointB;
+    [SerializeField] private float _speed = 1f;
+
+    private Vector3 _targetPosition;
+
+    private void Start()
     {
-        
+        _targetPosition = _pointB.position;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        MovePlatform();
+    }
+
+    private void MovePlatform()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, _targetPosition, _speed * Time.deltaTime);
+        if (Vector3.Distance(transform.position, _targetPosition) < 0.1f)
+        {
+            ChangePoint();
+        }
+    }
+
+    public void ChangePoint()
+    {
+        _targetPosition = _targetPosition == _pointB.position ? _pointA.position : _pointB.position;
     }
 }

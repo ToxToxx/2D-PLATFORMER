@@ -5,7 +5,7 @@ public class PlayerDragAndDrop : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _currentSprite;
 
-    private RotatablePlatform _dragableObject;
+    private RotatablePlatform _rotatablePlatform;
     private SizeChangablePlatform _sizeChangablePlatform;
     private Camera _mainCamera;
     private Vector3 _offset;
@@ -38,7 +38,7 @@ public class PlayerDragAndDrop : MonoBehaviour
     private void Cleanup()
     {
         _currentSprite = null;
-        _dragableObject = null;
+        _rotatablePlatform = null;
         _sizeChangablePlatform = null;
         _mainCamera = null;
     }
@@ -80,16 +80,16 @@ public class PlayerDragAndDrop : MonoBehaviour
         if (hit.collider != null)
         {
             _currentSprite = hit.collider.GetComponent<SpriteRenderer>();
-            _dragableObject = hit.collider.GetComponent<RotatablePlatform>();
+            _rotatablePlatform = hit.collider.GetComponent<RotatablePlatform>();
             _sizeChangablePlatform = hit.collider.GetComponent<SizeChangablePlatform>();
 
-            if (_currentSprite != null && (_dragableObject == null || !_dragableObject._isPlayerOnObject) && (_sizeChangablePlatform == null || !_sizeChangablePlatform.IsPlayerOnObject))
+            if (_currentSprite != null && (_rotatablePlatform == null || !_rotatablePlatform._isPlayerOnObject) && (_sizeChangablePlatform == null || !_sizeChangablePlatform.IsPlayerOnObject))
             {
                 _offset = _currentSprite.transform.position - _mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -_mainCamera.transform.position.z));
 
-                if (_dragableObject != null)
+                if (_rotatablePlatform != null)
                 {
-                    _dragableObject.StartManipulation();
+                    _rotatablePlatform.StartManipulation();
                 }
                 else if (_sizeChangablePlatform != null)
                 {
@@ -99,7 +99,7 @@ public class PlayerDragAndDrop : MonoBehaviour
             else
             {
                 _currentSprite = null;
-                _dragableObject = null;
+                _rotatablePlatform = null;
                 _sizeChangablePlatform = null;
             }
         }
@@ -121,9 +121,9 @@ public class PlayerDragAndDrop : MonoBehaviour
 
     private void Drop()
     {
-        if (_dragableObject != null)
+        if (_rotatablePlatform != null)
         {
-            _dragableObject.StopManipulation();
+            _rotatablePlatform.StopManipulation();
         }
 
         if (_sizeChangablePlatform != null)
@@ -132,7 +132,7 @@ public class PlayerDragAndDrop : MonoBehaviour
         }
 
         _currentSprite = null;
-        _dragableObject = null;
+        _rotatablePlatform = null;
         _sizeChangablePlatform = null;
     }
 }
