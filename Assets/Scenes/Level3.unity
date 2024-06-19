@@ -732,6 +732,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e651658672deb0b489aec425e3472147, type: 3}
+--- !u!114 &504800294 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6924167372452329754, guid: e651658672deb0b489aec425e3472147, type: 3}
+  m_PrefabInstance: {fileID: 504800293}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a9c929ac06ca7144a1fd6539617c33e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &565342184
 GameObject:
   m_ObjectHideFlags: 0
@@ -1797,6 +1808,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2105613165157704359, guid: f048bd8734693d740afabb0d250d170e, type: 3}
+      propertyPath: m_Name
+      value: WinningScreenTimeText
+      objectReference: {fileID: 0}
     - target: {fileID: 3880296265591633993, guid: f048bd8734693d740afabb0d250d170e, type: 3}
       propertyPath: m_Name
       value: WinningScreenCanvas
@@ -1813,10 +1828,43 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2105613165157704359, guid: f048bd8734693d740afabb0d250d170e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3748495986936519049}
     - targetCorrespondingSourceObject: {fileID: 6467309908795186870, guid: f048bd8734693d740afabb0d250d170e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1039600823}
   m_SourcePrefab: {fileID: 100100000, guid: f048bd8734693d740afabb0d250d170e, type: 3}
+--- !u!1 &3748495986936519047 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2105613165157704359, guid: f048bd8734693d740afabb0d250d170e, type: 3}
+  m_PrefabInstance: {fileID: 3748495986936519046}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3748495986936519048 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 426233691764391674, guid: f048bd8734693d740afabb0d250d170e, type: 3}
+  m_PrefabInstance: {fileID: 3748495986936519046}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3748495986936519047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3748495986936519049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3748495986936519047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01008d45a0cd1f84dad32458e0bff80f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerTimeUI: {fileID: 504800294}
+  _levelTimeText: {fileID: 3748495986936519048}
 --- !u!1001 &6320602962234863072
 PrefabInstance:
   m_ObjectHideFlags: 0
