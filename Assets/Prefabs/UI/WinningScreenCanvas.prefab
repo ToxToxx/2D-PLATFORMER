@@ -475,7 +475,7 @@ GameObject:
   - component: {fileID: 6627134577777100398}
   - component: {fileID: 3560400029789108769}
   - component: {fileID: 54369564546019604}
-  - component: {fileID: 4634380147933324452}
+  - component: {fileID: 454014902739915996}
   m_Layer: 5
   m_Name: NextLevelButton
   m_TagString: Untagged
@@ -585,7 +585,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4634380147933324452
+--- !u!114 &454014902739915996
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -597,7 +597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69e3ae9150c983741a18649f7dd186dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nextLevel: 0
+  _nextLevel: 4
   _levelManager: {fileID: 0}
   _nextLevelButton: {fileID: 54369564546019604}
 --- !u!1 &7009325820725514365

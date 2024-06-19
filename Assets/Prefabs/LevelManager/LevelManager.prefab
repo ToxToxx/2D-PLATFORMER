@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fe60f17be9c5448bc715fc6f1a353a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nextLevel: 2
-  _totalCoins: 1
+  _winningScreenCanvas: {fileID: 0}
+  _totalCoins: 4
   _playerGameObject: {fileID: 0}
   _respawnPoint: {fileID: 8940034030889805723}
 --- !u!1 &8940034030889805723
