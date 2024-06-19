@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] private Loader.Scene _nextLevel;
+    [SerializeField] private GameObject _winningScreenCanvas;
     [SerializeField] private int _totalCoins;
     [SerializeField] private GameObject _playerGameObject;
     [SerializeField] private GameObject _respawnPoint;
@@ -27,10 +27,11 @@ public class LevelManager : MonoBehaviour
         _collectedCoins++;
         if (_collectedCoins >= _totalCoins)
         {
-            if (_playerGameObject != null) //&& _respawnPoint != null)
+            if (_playerGameObject != null)
             {
                 _playerGameObject.transform.position = _respawnPoint.transform.position;
-                LoadNextLevel();
+                Time.timeScale = 0f;
+                ShowWinningScreen();
             }
             else
             {
@@ -39,8 +40,12 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    private void LoadNextLevel()
+    private void ShowWinningScreen()
     {
-        Loader.Load(_nextLevel);
+        _winningScreenCanvas.SetActive(true);
+    }
+    public void HideWinningScreen()
+    {
+        _winningScreenCanvas.SetActive(false);
     }
 }
