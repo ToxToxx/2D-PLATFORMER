@@ -86,8 +86,9 @@ GameObject:
   - component: {fileID: 3141279358005768032}
   - component: {fileID: 753202465878190869}
   - component: {fileID: 426233691764391674}
+  - component: {fileID: 7077189719347455620}
   m_Layer: 5
-  m_Name: TimeText
+  m_Name: WinningScreenTimeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -209,6 +210,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7077189719347455620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105613165157704359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01008d45a0cd1f84dad32458e0bff80f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerTimeUI: {fileID: 0}
+  _levelTimeText: {fileID: 426233691764391674}
 --- !u!1 &3880296265591633993
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,7 +242,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &859953824432425888
 RectTransform:
   m_ObjectHideFlags: 0
@@ -460,8 +475,9 @@ GameObject:
   - component: {fileID: 6627134577777100398}
   - component: {fileID: 3560400029789108769}
   - component: {fileID: 54369564546019604}
+  - component: {fileID: 4634380147933324452}
   m_Layer: 5
-  m_Name: Button
+  m_Name: NextLevelButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -569,6 +585,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4634380147933324452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6467309908795186870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e3ae9150c983741a18649f7dd186dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nextLevel: 0
+  _levelManager: {fileID: 0}
+  _nextLevelButton: {fileID: 54369564546019604}
 --- !u!1 &7009325820725514365
 GameObject:
   m_ObjectHideFlags: 0
