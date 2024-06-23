@@ -8,12 +8,16 @@ public class PlayerTimeUI : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _playerTimeText;
 
-    private float _currentTime;
+    private float _currentTime = 0;
 
+    private void Start()
+    {
+        _currentTime = 0;
+    }
     private void FixedUpdate()
     {
-        _playerTimeText.text = "TIME: " + Time.time.ToString("F1");
-        _currentTime = Time.time;
+        _playerTimeText.text = "TIME: " + _currentTime.ToString("F1");
+        _currentTime = Time.fixedTime;
     }
 
     public float GetCurrentTime()
