@@ -11,6 +11,7 @@ public static class Loader
         Level2,
         Level3,
         Level4,
+        Level5,
     }
 
     private static Scene _targetScene;
