@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PlayerTimeUI : MonoBehaviour
 {
-
     [SerializeField] private TextMeshProUGUI _playerTimeText;
 
     private float _currentTime = 0;
