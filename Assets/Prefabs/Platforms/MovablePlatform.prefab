@@ -176,6 +176,7 @@ GameObject:
   - component: {fileID: 2985089155354534035}
   - component: {fileID: 8179756490962291753}
   - component: {fileID: 8753839677932734154}
+  - component: {fileID: 4339812283068654293}
   m_Layer: 0
   m_Name: MovablePlatformObject
   m_TagString: Untagged
@@ -310,6 +311,33 @@ MonoBehaviour:
   _pointA: {fileID: 2458202688448672427}
   _pointB: {fileID: 7031526410714480400}
   _speed: 5
+--- !u!50 &4339812283068654293
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6248100287504477072}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1000
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &6925996902896159087
 GameObject:
   m_ObjectHideFlags: 0

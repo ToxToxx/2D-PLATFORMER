@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -13,10 +11,12 @@ public class PlayerTimeUI : MonoBehaviour
     {
         _currentTime = 0;
     }
-    private void FixedUpdate()
+
+    private void Update()
     {
+        _currentTime += Time.deltaTime;
+
         _playerTimeText.text = "TIME: " + _currentTime.ToString("F1");
-        _currentTime = Time.fixedTime;
     }
 
     public float GetCurrentTime()

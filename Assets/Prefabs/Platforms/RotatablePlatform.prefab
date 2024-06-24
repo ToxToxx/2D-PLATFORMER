@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2308992891702589115}
   - component: {fileID: 6423510524830682676}
   m_Layer: 6
-  m_Name: DragablePlatform
+  m_Name: RotatablePlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,5 +143,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988e01d09a36bff40aba6086722c870c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsPlayerOnObject: 0
-  rotationSpeed: 1000
+  _isPlayerOnObject: 0
+  _rotationSpeed: 1000
