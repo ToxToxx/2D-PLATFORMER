@@ -6,22 +6,14 @@ using UnityEngine.UI;
 public class ChangeLevelButtonUI : MonoBehaviour
 {
     [SerializeField] private Loader.Scene _nextLevel;
-    [SerializeField] private LevelManager _levelManager;
     [SerializeField] private Button _nextLevelButton;
     [SerializeField] private ScreenCanvasUI _screenCanvasUI;
 
     private void LoadNextLevel()
     {
-        if (_levelManager != null)
-        {
-            Loader.Load(_nextLevel);
-            Time.timeScale = 1.0f;
-            _screenCanvasUI.Hide();
-        }
-        else
-        {
-            Debug.LogError("NextLevel or LevelManager reference is missing.");
-        }
+        Loader.Load(_nextLevel);
+        Time.timeScale = 1.0f;
+        _screenCanvasUI.Hide();
     }
 
     private void OnEnable()

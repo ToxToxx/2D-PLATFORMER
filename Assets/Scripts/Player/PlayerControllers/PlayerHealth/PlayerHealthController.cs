@@ -7,6 +7,8 @@ public class PlayerHealthController : MonoBehaviour
     [SerializeField] private int _maxHealth = 3;
     private int _currentHealth;
 
+    [SerializeField] private ScreenCanvasUI _loseScreenCanvas;
+
     public event System.Action<int> OnHealthChanged;
 
     private void Awake()
@@ -53,7 +55,7 @@ public class PlayerHealthController : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("Player has died");
+        _loseScreenCanvas.Show();
         Time.timeScale = 0;
     }
 

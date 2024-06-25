@@ -135,10 +135,6 @@ PrefabInstance:
       propertyPath: _levelManager
       value: 
       objectReference: {fileID: 3996307444795998776}
-    - target: {fileID: 454014902739915996, guid: f048bd8734693d740afabb0d250d170e, type: 3}
-      propertyPath: _screenCanvasUI
-      value: 
-      objectReference: {fileID: 26061838}
     - target: {fileID: 859953824432425888, guid: f048bd8734693d740afabb0d250d170e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -405,6 +401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 3
+  _loseScreenCanvas: {fileID: 6044801886822450921}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
