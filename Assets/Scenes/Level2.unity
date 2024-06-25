@@ -392,6 +392,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoseSceeenCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 598319030644640279, guid: f3b2a65373294514ab168ea5ed907509, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1247396829982750550, guid: f3b2a65373294514ab168ea5ed907509, type: 3}
       propertyPath: _nextLevel
       value: 3
@@ -480,6 +484,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6018779877833005163, guid: f3b2a65373294514ab168ea5ed907509, type: 3}
+      propertyPath: _playerTimeUI
+      value: 
+      objectReference: {fileID: 1684629807}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2185,5 +2193,5 @@ SceneRoots:
   - {fileID: 1955673585}
   - {fileID: 1021764708}
   - {fileID: 1058488184}
-  - {fileID: 55588105}
   - {fileID: 509165351}
+  - {fileID: 55588105}
