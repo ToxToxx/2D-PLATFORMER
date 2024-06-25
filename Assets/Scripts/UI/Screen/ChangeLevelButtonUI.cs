@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NextLevelButtonUI : MonoBehaviour
+public class ChangeLevelButtonUI : MonoBehaviour
 {
     [SerializeField] private Loader.Scene _nextLevel;
     [SerializeField] private LevelManager _levelManager;

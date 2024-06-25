@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class WinningScreenTimeUI : MonoBehaviour
+public class ScreenTimeUI : MonoBehaviour
 {
     [SerializeField] private PlayerTimeUI _playerTimeUI;
     [SerializeField] private TextMeshProUGUI _levelTimeText;
