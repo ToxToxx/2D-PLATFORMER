@@ -8,6 +8,7 @@ public class ChangeLevelButtonUI : MonoBehaviour
     [SerializeField] private Loader.Scene _nextLevel;
     [SerializeField] private LevelManager _levelManager;
     [SerializeField] private Button _nextLevelButton;
+    [SerializeField] private ScreenCanvasUI _screenCanvasUI;
 
     private void LoadNextLevel()
     {
@@ -15,7 +16,7 @@ public class ChangeLevelButtonUI : MonoBehaviour
         {
             Loader.Load(_nextLevel);
             Time.timeScale = 1.0f;
-            _levelManager.HideWinningScreen();
+            _screenCanvasUI.Hide();
         }
         else
         {

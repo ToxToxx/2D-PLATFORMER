@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] private GameObject _winningScreenCanvas;
+    [SerializeField] private ScreenCanvasUI _winningScreenCanvas;
     [SerializeField] private int _totalCoins;
     [SerializeField] private GameObject _playerGameObject;
     [SerializeField] private GameObject _respawnPoint;
@@ -31,7 +31,7 @@ public class LevelManager : MonoBehaviour
             {
                 _playerGameObject.transform.position = _respawnPoint.transform.position;
                 Time.timeScale = 0f;
-                ShowWinningScreen();
+                _winningScreenCanvas.Show();
             }
             else
             {
@@ -40,12 +40,4 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    private void ShowWinningScreen()
-    {
-        _winningScreenCanvas.SetActive(true);
-    }
-    public void HideWinningScreen()
-    {
-        _winningScreenCanvas.SetActive(false);
-    }
 }
