@@ -3,15 +3,17 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] private ScreenCanvasUI _winningScreenCanvas;
-    [SerializeField] private int _totalCoins;
+    [SerializeField] private int _totalScore;
     [SerializeField] private GameObject _playerGameObject;
     [SerializeField] private GameObject _respawnPoint;
 
-    private int _collectedCoins;
+    private PlayerScoreController _scoreController;
+
 
     private void Start()
     {
-        _collectedCoins = 0;
+        _scoreController = PlayerScoreController.Instance;
+        _scoreController.OnScoreChanged += CheckIfAllCoinsCollected;
         if (_playerGameObject == null)
         {
             Debug.LogError("Player GameObject is not assigned in LevelManager.");
@@ -22,22 +24,26 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public void CollectCoin()
+    private void CheckIfAllCoinsCollected(object sender, System.EventArgs e)
     {
-        _collectedCoins++;
-        if (_collectedCoins >= _totalCoins)
+        if (_scoreController.GetScore() >= _totalScore)
         {
             if (_playerGameObject != null)
             {
-                _playerGameObject.transform.position = _respawnPoint.transform.position;
-                Time.timeScale = 0f;
-                _winningScreenCanvas.Show();
+               FinishGame();
             }
             else
             {
                 Debug.LogWarning("Player GameObject or Respawn Point is missing.");
             }
         }
+    }
+
+    public void FinishGame()
+    {
+        _playerGameObject.transform.position = _respawnPoint.transform.position;
+        Time.timeScale = 0f;
+        _winningScreenCanvas.Show();
     }
 
 }
