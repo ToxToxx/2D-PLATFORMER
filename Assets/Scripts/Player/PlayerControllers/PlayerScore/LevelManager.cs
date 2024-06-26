@@ -5,7 +5,6 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private ScreenCanvasUI _winningScreenCanvas;
     [SerializeField] private int _totalScore = 4;
     [SerializeField] private GameObject _playerGameObject;
-    [SerializeField] private GameObject _respawnPoint;
 
     private PlayerScoreController _scoreController;
 
@@ -17,10 +16,6 @@ public class LevelManager : MonoBehaviour
         if (_playerGameObject == null)
         {
             Debug.LogError("Player GameObject is not assigned in LevelManager.");
-        }
-        if (_respawnPoint == null)
-        {
-            Debug.LogError("Respawn Point GameObject is not assigned in LevelManager.");
         }
     }
 
@@ -41,7 +36,6 @@ public class LevelManager : MonoBehaviour
 
     public void FinishGame()
     {
-       // _playerGameObject.transform.position = _respawnPoint.transform.position;
         Time.timeScale = 0f;
         _winningScreenCanvas.Show();
     }
