@@ -3,7 +3,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] private ScreenCanvasUI _winningScreenCanvas;
-    [SerializeField] private int _totalScore;
+    [SerializeField] private int _totalScore = 4;
     [SerializeField] private GameObject _playerGameObject;
     [SerializeField] private GameObject _respawnPoint;
 
@@ -41,7 +41,7 @@ public class LevelManager : MonoBehaviour
 
     public void FinishGame()
     {
-        _playerGameObject.transform.position = _respawnPoint.transform.position;
+       // _playerGameObject.transform.position = _respawnPoint.transform.position;
         Time.timeScale = 0f;
         _winningScreenCanvas.Show();
     }

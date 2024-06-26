@@ -352,11 +352,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f048bd8734693d740afabb0d250d170e, type: 3}
---- !u!1 &94697887 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3880296265591633993, guid: f048bd8734693d740afabb0d250d170e, type: 3}
+--- !u!114 &94697887 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3575606138369200339, guid: f048bd8734693d740afabb0d250d170e, type: 3}
   m_PrefabInstance: {fileID: 94697886}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94d3fadb828d494469b626eee3bc8558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &98432771
 GameObject:
   m_ObjectHideFlags: 0
@@ -1795,6 +1801,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 257504675656173965, guid: 678facf12c4c6a94aae2d1e2350d0f23, type: 3}
       propertyPath: _totalCoins
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 257504675656173965, guid: 678facf12c4c6a94aae2d1e2350d0f23, type: 3}
+      propertyPath: _totalScore
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 257504675656173965, guid: 678facf12c4c6a94aae2d1e2350d0f23, type: 3}
