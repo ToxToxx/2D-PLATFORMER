@@ -15,7 +15,8 @@ public class PlayerDeathBorder : MonoBehaviour
         _playerHealthController = PlayerHealthController.Instance;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.GetComponent<PlayerMovementController>())
         {
@@ -23,5 +24,4 @@ public class PlayerDeathBorder : MonoBehaviour
             _playerHealthController.TakeDamage(_deathBorderDamage);
         }
     }
-
 }
